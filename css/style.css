@@ -512,6 +512,32 @@ textarea.form-control {
     display: none;
 }
 
+.avartar-picker {
+    margin-top: 20px;
+}
+
+.avartar-picker .inputfile {
+    display: none;
+}
+
+.avartar-picker label {
+    display: block;
+    cursor: pointer;
+    display: inline-block;
+    color: #333;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.avartar-picker label:hover {
+    color: #666;
+}
+
+.avartar-picker label i {
+    margin-right: 3px;
+}
+
 @media (max-width: 991px) {
     .wizard {
         max-width: 768px;
