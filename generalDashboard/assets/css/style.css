@@ -304,6 +304,7 @@ h6 {
 
 .accordion-item {
     border: 1px solid #ebeef4;
+    background-color: #000;
 }
 
 .accordion-button:focus {
@@ -320,6 +321,7 @@ h6 {
     padding: 15px 0;
     background: none;
     border: 0;
+    color: #fff;
 }
 
 .accordion-flush .accordion-button:not(.collapsed) {
