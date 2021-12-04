@@ -1,22 +1,10 @@
-/**
-* Template Name: NiceAdmin - v2.2.0
-* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
-
 :root {
     scroll-behavior: smooth;
 }
 
 body {
     font-family: "Open Sans", sans-serif;
-    background: #f6f9ff;
+    background: #040b14b6;
     color: #444444;
 }
 
@@ -69,7 +57,7 @@ h6 {
     font-size: 24px;
     margin-bottom: 0;
     font-weight: 600;
-    color: #012970;
+    color: #fff;
 }
 
 
@@ -419,7 +407,7 @@ h6 {
 .logo span {
     font-size: 26px;
     font-weight: 700;
-    color: #012970;
+    color: #fff;
     font-family: "Nunito", sans-serif;
 }
 
@@ -428,7 +416,7 @@ h6 {
     z-index: 997;
     height: 60px;
     box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-    background-color: #fff;
+    background-color: #0d131c;
     padding-left: 20px;
     /* Toggle Sidebar Button */
     /* Search Bar */
@@ -438,7 +426,7 @@ h6 {
     font-size: 32px;
     padding-left: 10px;
     cursor: pointer;
-    color: #012970;
+    color: #fff;
 }
 
 .header .search-bar {
@@ -516,11 +504,11 @@ h6 {
 
 .header-nav .nav-icon {
     font-size: 20px;
-    color: #012970;
+    color: #fff;
 }
 
 .header-nav .nav-profile {
-    color: #012970;
+    color: #fff;
 }
 
 .header-nav .nav-profile img {
@@ -649,7 +637,6 @@ h6 {
     scrollbar-width: thin;
     scrollbar-color: #aab7cf transparent;
     box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-    background-color: #fff;
 }
 
 @media (max-width: 1199px) {
@@ -710,7 +697,7 @@ h6 {
 .sidebar-nav .nav-heading {
     font-size: 11px;
     text-transform: uppercase;
-    color: #899bbd;
+    color: rgb(223, 223, 223);
     font-weight: 600;
     margin: 10px 0 5px 15px;
 }
@@ -734,12 +721,12 @@ h6 {
 }
 
 .sidebar-nav .nav-link.collapsed {
-    color: #012970;
-    background: #fff;
+    color: #fff;
+    background: #149DDD;
 }
 
 .sidebar-nav .nav-link.collapsed i {
-    color: #899bbd;
+    color: #fff;
 }
 
 .sidebar-nav .nav-link:hover {
