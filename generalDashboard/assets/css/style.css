@@ -475,7 +475,7 @@ h6 {
 .header .search-form input:hover {
     outline: none;
     box-shadow: 0 0 10px 0 rgba(1, 41, 112, 0.15);
-    border: 1px solid rgba(1, 41, 112, 0.3);
+    border: 1px solid white;
 }
 
 .header .search-form button {
