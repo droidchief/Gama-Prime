@@ -11,105 +11,146 @@
     <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
 
     <!-- STYLE CSS -->
-    <link rel="stylesheet" href="logincss/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <form action="">
-            <div id="wizard" style="height: 100vh; overflow-y: scroll;">
-                <!-- SECTION 1 -->
-                <h4></h4>
-                <section>
-                    <div class="form-header">
-                        <div class="form-group">
-                            <div class="form-holder active">
+        <form action="" id="wizard">
+            <!-- SECTION 1 -->
+            <h2></h2>
+            <section>
+                <div class="inner">
+                    <div class="image-holder">
+                        <img src="images/Rectangle 2.png" alt="">
+                    </div>
+                    <div class="form-content">
+                        <div class="form-header">
+                            <h3>Register</h3>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-holder">
                                 <input type="text" placeholder="First Name" class="form-control">
                             </div>
                             <div class="form-holder">
                                 <input type="text" placeholder="Last Name" class="form-control">
                             </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-holder">
+                                <input type="text" placeholder="Email" class="form-control">
+                            </div>
                             <div class="form-holder">
                                 <input type="text" placeholder="Age" class="form-control">
                             </div>
                         </div>
-                    </div>
-                    <div class="form-holder">
-                        <input type="text" placeholder="Email" class="form-control">
-                    </div>
-                    <div class="form-holder">
-                        <input type="password" placeholder="Create a password" class="form-control">
-                    </div>
-                </section>
-
-                <!-- SECTION 2 -->
-                <h4></h4>
-                <section>
-                    <div class="d-flex justify-content-center">
-                        <div class="avartar">
-                            <a href="#">
-                                <div style="height: 19.7rem; overflow-y: hidden; background-color: #f7f7f7; box-shadow: 5px 10px 18px #edebebc6; border-radius: 20px;">
-                                    <img src="" alt="">
-                                </div>
-                            </a>
-                            <div class="avartar-picker">
-                                <input type="file" name="file-1[]" id="file-1" class="inputfile" data-multiple-caption="{count} files selected" multiple />
-                                <label for="file-1">
-										<i class="zmdi zmdi-camera"></i>
-										<span>select cover photo</span>
-									</label>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <!-- SECTION 3 -->
-                <h4></h4>
-                <section style="margin-top: 2rem;">
-
-                    <div class="form-header">
-                        <div class="form-group">
-                            <div class="form-holder active">
+                        <div class="form-row">
+                            <div class="form-holder">
                                 <input type="text" placeholder="Education" class="form-control">
                             </div>
-
-                            <div class="form-holder">
-                                <select class="form-select form-control" aria-label="Default select example">
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
-                                <option value="3">Others</option>
-                              </select>
+                            <div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
+                                <div class="checkbox-tick">
+                                    <label class="male">
+											<input type="radio" name="gender" value="male" checked> Male<br>
+											<span class="checkmark"></span>
+										</label>
+                                    <label class="female">
+											<input type="radio" name="gender" value="female"> Female<br>
+											<span class="checkmark"></span>
+										</label>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class="form-holder">
-                                <select class="form-select form-control" aria-label="Default select example">
-                              <option value="1">Specialty</option>
-                              <option value="2">NLP</option>
-                              <option value="3">CV</option>
-                              <option value="3">Machine Learning</option>
-                              <option value="3">Robotics</option>
-                            </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2 -->
+            <h2></h2>
+            <section>
+                <div class="inner">
+                    <div class="image-holder">
+                        <img src="images/Rectangle 3.png" alt="">
+                    </div>
+                    <div class="form-content">
+                        <div class="form-header">
+                            <h3>Register</h3>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-holder w-100">
+                                <input type="text" placeholder="Country" class="form-control">
                             </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-holder">
+                                <input type="text" placeholder="City" class="form-control">
+                            </div>
+                            <div class="select">
+                                <div class="form-holder">
+                                    <div class="select-control">Track</div>
+                                    <i class="zmdi zmdi-caret-down"></i>
+                                </div>
+                                <ul class="dropdown">
+                                    <li rel="Entreprenuer">Entreprenuer</li>
+                                    <li rel="Professional">Professional</li>
+                                </ul>
+                            </div>
+                        </div>
 
+
+                        <div class="form-row">
+                            <div class="select">
+                                <div class="form-holder">
+                                    <div class="select-control">Specialty</div>
+                                    <i class="zmdi zmdi-caret-down"></i>
+                                </div>
+                                <ul class="dropdown">
+                                    <li rel="NLP">NLP</li>
+                                    <li rel="CV">CV</li>
+                                    <li rel="Machine Learning">Machine Learning</li>
+                                    <li rel="Robotics">Robotics</li>
+                                </ul>
+                            </div>
+                            <div class="form-holder"></div>
                         </div>
                     </div>
-
-                </section>
-
-                <div style="display: flex; justify-content: flex-end;">
-                    <button style="background-color: #149DDD; border: none; width: 10rem; padding: .7rem; border-radius: 1rem; font-size: 1rem; margin-bottom: 5rem;"> <a style="color: white;" href="userDashboard.html">Register</a></button>
                 </div>
-            </div>
+            </section>
+
+            <!-- SECTION 3 -->
+            <h2></h2>
+            <section>
+                <div class="inner">
+                    <div class="image-holder">
+                        <img src="images/Rectangle 2.png" alt="">
+                    </div>
+                    <div class="form-content">
+                        <div class="form-header">
+                            <h3>Register</h3>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-holder w-100">
+                                <textarea name="" id="" placeholder="Professional Summary" class="form-control" style="height: 99px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="checkbox-circle mt-24">
+                            <label>
+									<input type="checkbox" >  Please accept <a href="#">terms and conditions ?</a>
+									<span class="checkmark"></span>
+								</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </form>
     </div>
 
-    <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+    <!-- JQUERY -->
+    <script src="js/jquery-3.3.1.min.js"></script>
 
     <!-- JQUERY STEP -->
-    <!-- <script src="js/jquery.steps.js"></script> -->
-
+    <script src="js/jquery.steps.js"></script>
     <script src="js/main.js"></script>
     <!-- Template created and distributed by Colorlib -->
 </body>

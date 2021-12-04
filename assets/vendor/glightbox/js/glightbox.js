@@ -554,11 +554,11 @@
     each(btns, function (btn) {
       orders.push(btn.getAttribute('data-taborder'));
     });
-    var nextOrders = orders.filter(function (el) {
+    var NextOrders = orders.filter(function (el) {
       return el >= parseInt(newIndex);
     });
-    var nextFocus = nextOrders.sort()[0];
-    return document.querySelector(".gbtn[data-taborder=\"".concat(nextFocus, "\"]"));
+    var NextFocus = NextOrders.sort()[0];
+    return document.querySelector(".gbtn[data-taborder=\"".concat(NextFocus, "\"]"));
   }
 
   function keyboardNavigation(instance) {
@@ -602,17 +602,17 @@
           }
 
           var currentFocusOrder = focusedButton.getAttribute('data-taborder');
-          var nextFocus = getNextFocusElement(currentFocusOrder);
+          var NextFocus = getNextFocusElement(currentFocusOrder);
           removeClass(focusedButton, 'focused');
 
-          if (nextFocus) {
-            nextFocus.focus();
-            addClass(nextFocus, 'focused');
+          if (NextFocus) {
+            NextFocus.focus();
+            addClass(NextFocus, 'focused');
           }
         }
 
         if (key == 39) {
-          instance.nextSlide();
+          instance.NextSlide();
         }
 
         if (key == 37) {
@@ -1304,7 +1304,7 @@
             return resetSlideMove(media);
           }
 
-          instance.nextSlide();
+          instance.NextSlide();
         }
 
         if (evt.direction == 'Right') {
@@ -1593,7 +1593,7 @@
         if (this.doSlideChange) {
           this.instance.preventOutsideClick = true;
           this.doSlideChange == 'right' && this.instance.prevSlide();
-          this.doSlideChange == 'left' && this.instance.nextSlide();
+          this.doSlideChange == 'left' && this.instance.NextSlide();
         }
 
         if (this.doSlideClose) {
@@ -1660,7 +1660,7 @@
               this.instance.preventOutsideClick = true;
               this.dragEnd(null);
               doChange == 'right' && this.instance.prevSlide();
-              doChange == 'left' && this.instance.nextSlide();
+              doChange == 'left' && this.instance.NextSlide();
               return;
             }
           }
@@ -2526,12 +2526,12 @@
     },
     svg: {
       close: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"><g><g><path d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249C10.096,509.982,15.39,512,20.683,512c5.293,0,10.586-2.019,14.625-6.059L505.943,35.306C514.019,27.23,514.019,14.135,505.943,6.058z"/></g></g><g><g><path d="M505.942,476.694L35.306,6.059c-8.076-8.077-21.172-8.077-29.248,0c-8.077,8.076-8.077,21.171,0,29.248l470.636,470.636c4.038,4.039,9.332,6.058,14.625,6.058c5.293,0,10.587-2.019,14.624-6.057C514.018,497.866,514.018,484.771,505.942,476.694z"/></g></g></svg>',
-      next: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.175 477.175" xml:space="preserve"> <g><path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"/></g></svg>',
+      Next: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.175 477.175" xml:space="preserve"> <g><path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"/></g></svg>',
       prev: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.175 477.175" xml:space="preserve"><g><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/></g></svg>'
     }
   };
   defaults.slideHTML = "<div class=\"gslide\">\n    <div class=\"gslide-inner-content\">\n        <div class=\"ginner-container\">\n            <div class=\"gslide-media\">\n            </div>\n            <div class=\"gslide-description\">\n                <div class=\"gdesc-inner\">\n                    <h4 class=\"gslide-title\"></h4>\n                    <div class=\"gslide-desc\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
-  defaults.lightboxHTML = "<div id=\"glightbox-body\" class=\"glightbox-container\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"false\">\n    <div class=\"gloader visible\"></div>\n    <div class=\"goverlay\"></div>\n    <div class=\"gcontainer\">\n    <div id=\"glightbox-slider\" class=\"gslider\"></div>\n    <button class=\"gclose gbtn\" aria-label=\"Close\" data-taborder=\"3\">{closeSVG}</button>\n    <button class=\"gprev gbtn\" aria-label=\"Previous\" data-taborder=\"2\">{prevSVG}</button>\n    <button class=\"gnext gbtn\" aria-label=\"Next\" data-taborder=\"1\">{nextSVG}</button>\n</div>\n</div>";
+  defaults.lightboxHTML = "<div id=\"glightbox-body\" class=\"glightbox-container\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"false\">\n    <div class=\"gloader visible\"></div>\n    <div class=\"goverlay\"></div>\n    <div class=\"gcontainer\">\n    <div id=\"glightbox-slider\" class=\"gslider\"></div>\n    <button class=\"gclose gbtn\" aria-label=\"Close\" data-taborder=\"3\">{closeSVG}</button>\n    <button class=\"gprev gbtn\" aria-label=\"Previous\" data-taborder=\"2\">{prevSVG}</button>\n    <button class=\"gNext gbtn\" aria-label=\"Next\" data-taborder=\"1\">{NextSVG}</button>\n</div>\n</div>";
 
   var GlightboxInit = function () {
     function GlightboxInit() {
@@ -2635,11 +2635,11 @@
         if (this.elements.length == 1) {
           addClass(this.prevButton, 'glightbox-button-hidden');
 
-          addClass(this.nextButton, 'glightbox-button-hidden');
+          addClass(this.NextButton, 'glightbox-button-hidden');
         } else {
           removeClass(this.prevButton, 'glightbox-button-hidden');
 
-          removeClass(this.nextButton, 'glightbox-button-hidden');
+          removeClass(this.NextButton, 'glightbox-button-hidden');
         }
 
         this.lightboxOpen = true;
@@ -2773,8 +2773,8 @@
         this.goToSlide(this.index - 1);
       }
     }, {
-      key: "nextSlide",
-      value: function nextSlide() {
+      key: "NextSlide",
+      value: function NextSlide() {
         this.goToSlide(this.index + 1);
       }
     }, {
@@ -2877,7 +2877,7 @@
             if (index == this.elements.length - 1) {
               this.prevSlide();
             } else {
-              this.nextSlide();
+              this.NextSlide();
             }
           }
 
@@ -2907,7 +2907,7 @@
           trigger: isNil(this.prevActiveSlideIndex) ? null : this.elements[this.prevActiveSlideIndex].node,
           player: this.getSlidePlayerInstance(this.prevActiveSlideIndex)
         };
-        var nextData = {
+        var NextData = {
           index: this.index,
           slide: this.activeSlide,
           slideNode: this.activeSlide,
@@ -2933,11 +2933,11 @@
 
             _this4.trigger('slide_changed', {
               prev: prevData,
-              current: nextData
+              current: NextData
             });
 
             if (isFunction(_this4.settings.afterSlideChange)) {
-              _this4.settings.afterSlideChange.apply(_this4, [prevData, nextData]);
+              _this4.settings.afterSlideChange.apply(_this4, [prevData, NextData]);
             }
           });
         } else {
@@ -2957,11 +2957,11 @@
 
             _this4.trigger('slide_changed', {
               prev: prevData,
-              current: nextData
+              current: NextData
             });
 
             if (isFunction(_this4.settings.afterSlideChange)) {
-              _this4.settings.afterSlideChange.apply(_this4, [prevData, nextData]);
+              _this4.settings.afterSlideChange.apply(_this4, [prevData, NextData]);
             }
           });
         }
@@ -3300,11 +3300,11 @@
           }
         });
 
-        var nextSVG = has(this.settings.svg, 'next') ? this.settings.svg.next : '';
+        var NextSVG = has(this.settings.svg, 'Next') ? this.settings.svg.Next : '';
         var prevSVG = has(this.settings.svg, 'prev') ? this.settings.svg.prev : '';
         var closeSVG = has(this.settings.svg, 'close') ? this.settings.svg.close : '';
         var lightboxHTML = this.settings.lightboxHTML;
-        lightboxHTML = lightboxHTML.replace(/{nextSVG}/g, nextSVG);
+        lightboxHTML = lightboxHTML.replace(/{NextSVG}/g, NextSVG);
         lightboxHTML = lightboxHTML.replace(/{prevSVG}/g, prevSVG);
         lightboxHTML = lightboxHTML.replace(/{closeSVG}/g, closeSVG);
         lightboxHTML = createHTML(lightboxHTML);
@@ -3313,7 +3313,7 @@
         this.modal = modal;
         var closeButton = modal.querySelector('.gclose');
         this.prevButton = modal.querySelector('.gprev');
-        this.nextButton = modal.querySelector('.gnext');
+        this.NextButton = modal.querySelector('.gNext');
         this.overlay = modal.querySelector('.goverlay');
         this.loader = modal.querySelector('.gloader');
         this.slidesContainer = document.getElementById('glightbox-slider');
@@ -3337,13 +3337,13 @@
           closeButton.parentNode.removeChild(closeButton);
         }
 
-        if (this.nextButton) {
-          this.events['next'] = addEvent('click', {
-            onElement: this.nextButton,
+        if (this.NextButton) {
+          this.events['Next'] = addEvent('click', {
+            onElement: this.NextButton,
             withCallback: function withCallback(e, target) {
               e.preventDefault();
 
-              _this7.nextSlide();
+              _this7.NextSlide();
             }
           });
         }
@@ -3364,7 +3364,7 @@
             onElement: modal,
             withCallback: function withCallback(e, target) {
               if (!_this7.preventOutsideClick && !hasClass(document.body, 'glightbox-mobile') && !closest(e.target, '.ginner-container')) {
-                if (!closest(e.target, '.gbtn') && !hasClass(e.target, 'gnext') && !hasClass(e.target, 'gprev')) {
+                if (!closest(e.target, '.gbtn') && !hasClass(e.target, 'gNext') && !hasClass(e.target, 'gprev')) {
                   _this7.close();
                 }
               }
@@ -3507,18 +3507,18 @@
       value: function updateNavigationClasses() {
         var loop = this.loop();
 
-        removeClass(this.nextButton, 'disabled');
+        removeClass(this.NextButton, 'disabled');
 
         removeClass(this.prevButton, 'disabled');
 
         if (this.index == 0 && this.elements.length - 1 == 0) {
           addClass(this.prevButton, 'disabled');
 
-          addClass(this.nextButton, 'disabled');
+          addClass(this.NextButton, 'disabled');
         } else if (this.index === 0 && !loop) {
           addClass(this.prevButton, 'disabled');
         } else if (this.index === this.elements.length - 1 && !loop) {
-          addClass(this.nextButton, 'disabled');
+          addClass(this.NextButton, 'disabled');
         }
       }
     }, {

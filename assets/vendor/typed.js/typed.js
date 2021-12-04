@@ -285,7 +285,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	
 	    /**
-	     * Continue to the next string & begin typing
+	     * Continue to the Next string & begin typing
 	     * @param {string} curString the current string in the strings array
 	     * @param {number} curStrPos the current position in the curString
 	     * @private
@@ -301,8 +301,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // start typing each new char into existing string
 	      // curString: arg, this.el.html: original text inside element
 	      curStrPos += numChars;
-	      var nextString = curString.substr(0, curStrPos);
-	      this.replaceText(nextString);
+	      var NextString = curString.substr(0, curStrPos);
+	      this.replaceText(NextString);
 	      // loop the function
 	      this.typewrite(curString, curStrPos);
 	    }
@@ -364,8 +364,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        // if smartBack is enabled
 	        if (_this4.smartBackspace) {
 	          // the remaining part of the current string is equal of the same part of the new string
-	          var nextString = _this4.strings[_this4.arrayPos + 1];
-	          if (nextString && curStringAtPosition === nextString.substr(0, curStrPos)) {
+	          var NextString = _this4.strings[_this4.arrayPos + 1];
+	          if (NextString && curStringAtPosition === NextString.substr(0, curStrPos)) {
 	            _this4.stopNum = curStrPos;
 	          } else {
 	            _this4.stopNum = 0;
@@ -381,7 +381,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          _this4.backspace(curString, curStrPos);
 	        } else if (curStrPos <= _this4.stopNum) {
 	          // if the stop number has been reached, increase
-	          // array position to next string
+	          // array position to Next string
 	          _this4.arrayPos++;
 	          // When looping, begin at the beginning after backspace complete
 	          if (_this4.arrayPos === _this4.strings.length) {
@@ -553,7 +553,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.cursor.className = 'typed-cursor';
 	      this.cursor.setAttribute('aria-hidden', true);
 	      this.cursor.innerHTML = this.cursorChar;
-	      this.el.parentNode && this.el.parentNode.insertBefore(this.cursor, this.el.nextSibling);
+	      this.el.parentNode && this.el.parentNode.insertBefore(this.cursor, this.el.NextSibling);
 	    }
 	  }]);
 	

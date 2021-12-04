@@ -1,40 +1,41 @@
 $(function() {
     $("#wizard").steps({
-        headerTag: "h4",
+        headerTag: "h2",
         bodyTag: "section",
         transitionEffect: "fade",
         enableAllSteps: true,
         transitionEffectSpeed: 500,
-        onStepChanging: function(event, currentIndex, newIndex) {
-            if (newIndex >= 1) {
-                $('.actions ul').addClass('actions-next');
-            } else {
-                $('.actions ul').removeClass('actions-next');
-            }
-            return true;
-        },
         labels: {
-            finish: "Finish",
-            next: "Continue",
-            previous: "Back"
+            finish: "Sign In",
+            next: "Next",
+            previous: "Previous"
         }
     });
-    // Custom Steps 
     $('.wizard > .steps li a').click(function() {
         $(this).parent().addClass('checked');
         $(this).parent().prevAll().addClass('checked');
         $(this).parent().nextAll().removeClass('checked');
     });
-    // Custom Button Jquery Step
+    // Custome Jquery Step Button
     $('.forward').click(function() {
         $("#wizard").steps('next');
-    });
+    })
     $('.backward').click(function() {
-        $("#wizard").steps('previous');
+            $("#wizard").steps('previous');
+        })
+        // Select Dropdown
+    $('html').click(function() {
+        $('.select .dropdown').hide();
     });
-    // Input Focus
-    $('.form-holder').delegate("input", "focus", function() {
-        $('.form-holder').removeClass("active");
-        $(this).parent().addClass("active");
+    $('.select').click(function(event) {
+        event.stopPropagation();
     });
-});
+    $('.select .select-control').click(function() {
+        $(this).parent().next().toggle();
+    })
+    $('.select .dropdown li').click(function() {
+        $(this).parent().toggle();
+        var text = $(this).attr('rel');
+        $(this).parent().prev().find('div').text(text);
+    })
+})

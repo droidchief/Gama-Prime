@@ -2668,7 +2668,7 @@ return Item;
   proto._getHorizontalColPosition = function( colSpan, item ) {
     var col = this.horizontalColIndex % this.cols;
     var isOver = colSpan > 1 && col + colSpan > this.cols;
-    // shift to next row if item can't fit on current row
+    // shift to Next row if item can't fit on current row
     col = isOver ? 0 : col;
     // don't let zero-size items take up space
     var hasSize = item.size.outerWidth && item.size.outerHeight;
