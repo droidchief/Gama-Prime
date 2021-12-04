@@ -13,6 +13,7 @@
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
+    background-color: #0b001d;
 }
 
 a {
@@ -138,7 +139,7 @@ h6 {
     height: 40px;
     font-size: 14px;
     transition: all 0.5s;
-    color: #fff;
+    color: #000;
     padding: 0;
 }
 
@@ -181,7 +182,7 @@ h6 {
 --------------------------------------------------------------*/
 
 #header {
-    background: #fff;
+    background-color: #0b001d;
     transition: all 0.5s;
     z-index: 997;
     height: 86px;
@@ -203,7 +204,7 @@ h6 {
 }
 
 #header .logo a {
-    color: #222222;
+    color: #fff;
 }
 
 #header .logo a span {
@@ -257,7 +258,7 @@ h6 {
     padding: 0 3px;
     font-size: 15px;
     font-weight: 600;
-    color: #222222;
+    color: white;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
