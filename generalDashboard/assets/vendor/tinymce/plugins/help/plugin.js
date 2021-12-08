@@ -549,8 +549,8 @@
         name: 'Table'
       },
       {
-        key: 'template',
-        name: 'Template'
+        key: '',
+        name: ''
       },
       {
         key: 'textcolor',

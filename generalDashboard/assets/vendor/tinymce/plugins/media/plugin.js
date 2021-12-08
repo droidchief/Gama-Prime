@@ -205,11 +205,11 @@
     var getScripts = function (editor) {
       return editor.getParam('media_scripts');
     };
-    var getAudioTemplateCallback = function (editor) {
-      return editor.getParam('audio_template_callback');
+    var getAudioCallback = function (editor) {
+      return editor.getParam('audio__callback');
     };
-    var getVideoTemplateCallback = function (editor) {
-      return editor.getParam('video_template_callback');
+    var getVideoCallback = function (editor) {
+      return editor.getParam('video__callback');
     };
     var hasLiveEmbeds = function (editor) {
       return editor.getParam('media_live_embeds', true);
@@ -591,16 +591,16 @@
       html += '</object>';
       return html;
     };
-    var getAudioHtml = function (data, audioTemplateCallback) {
-      if (audioTemplateCallback) {
-        return audioTemplateCallback(data);
+    var getAudioHtml = function (data, audioCallback) {
+      if (audioCallback) {
+        return audioCallback(data);
       } else {
         return '<audio controls="controls" src="' + data.source + '">' + (data.altsource ? '\n<source src="' + data.altsource + '"' + (data.altsourcemime ? ' type="' + data.altsourcemime + '"' : '') + ' />\n' : '') + '</audio>';
       }
     };
-    var getVideoHtml = function (data, videoTemplateCallback) {
-      if (videoTemplateCallback) {
-        return videoTemplateCallback(data);
+    var getVideoHtml = function (data, videoCallback) {
+      if (videoCallback) {
+        return videoCallback(data);
       } else {
         return '<video width="' + data.width + '" height="' + data.height + '"' + (data.poster ? ' poster="' + data.poster + '"' : '') + ' controls="controls">\n' + '<source src="' + data.source + '"' + (data.sourcemime ? ' type="' + data.sourcemime + '"' : '') + ' />\n' + (data.altsource ? '<source src="' + data.altsource + '"' + (data.altsourcemime ? ' type="' + data.altsourcemime + '"' : '') + ' />\n' : '') + '</video>';
       }
@@ -644,8 +644,8 @@
           data.width = String(videoScript.width);
           data.height = String(videoScript.height);
         }
-        var audioTemplateCallback = getAudioTemplateCallback(editor);
-        var videoTemplateCallback = getVideoTemplateCallback(editor);
+        var audioCallback = getAudioCallback(editor);
+        var videoCallback = getVideoCallback(editor);
         data.width = data.width || '300';
         data.height = data.height || '150';
         global$8.each(data, function (value, key) {
@@ -656,11 +656,11 @@
         } else if (data.sourcemime === 'application/x-shockwave-flash') {
           return getFlashHtml(data);
         } else if (data.sourcemime.indexOf('audio') !== -1) {
-          return getAudioHtml(data, audioTemplateCallback);
+          return getAudioHtml(data, audioCallback);
         } else if (data.type === 'script') {
           return getScriptHtml(data);
         } else {
-          return getVideoHtml(data, videoTemplateCallback);
+          return getVideoHtml(data, videoCallback);
         }
       }
     };

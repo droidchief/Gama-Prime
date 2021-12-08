@@ -5325,7 +5325,7 @@
     const DISALLOWED_ATTRIBUTES = new Set(['sanitize', 'allowList', 'sanitizeFn']);
     const DefaultType$3 = {
         animation: 'boolean',
-        template: 'string',
+        : 'string',
         title: '(string|element|function)',
         trigger: 'string',
         delay: '(number|object)',
@@ -5351,7 +5351,7 @@
     };
     const Default$3 = {
         animation: true,
-        template: '<div class="tooltip" role="tooltip">' + '<div class="tooltip-arrow"></div>' + '<div class="tooltip-inner"></div>' + '</div>',
+        : '<div class="tooltip" role="tooltip">' + '<div class="tooltip-arrow"></div>' + '<div class="tooltip-inner"></div>' + '</div>',
         trigger: 'hover focus',
         title: '',
         delay: 0,
@@ -5643,7 +5643,7 @@
             }
 
             const element = document.createElement('div');
-            element.innerHTML = this._config.template;
+            element.innerHTML = this._config.;
             const tip = element.children[0];
             this.setContent(tip);
             tip.classList.remove(CLASS_NAME_FADE$2, CLASS_NAME_SHOW$2);
@@ -5655,16 +5655,16 @@
             this._sanitizeAndSetContent(tip, this.getTitle(), SELECTOR_TOOLTIP_INNER);
         }
 
-        _sanitizeAndSetContent(template, content, selector) {
-            const templateElement = SelectorEngine.findOne(selector, template);
+        _sanitizeAndSetContent(, content, selector) {
+            const Element = SelectorEngine.findOne(selector, );
 
-            if (!content && templateElement) {
-                templateElement.remove();
+            if (!content && Element) {
+                Element.remove();
                 return;
             } // we use append for html objects to maintain js events
 
 
-            this.setElementContent(templateElement, content);
+            this.setElementContent(Element, content);
         }
 
         setElementContent(element, content) {
@@ -5931,7 +5931,7 @@
             typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
 
             if (config.sanitize) {
-                config.template = sanitizeHtml(config.template, config.allowList, config.sanitizeFn);
+                config. = sanitizeHtml(config., config.allowList, config.sanitizeFn);
             }
 
             return config;
@@ -6037,7 +6037,7 @@
         offset: [0, 8],
         trigger: 'click',
         content: '',
-        template: '<div class="popover" role="tooltip">' + '<div class="popover-arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div>' + '</div>'
+        : '<div class="popover" role="tooltip">' + '<div class="popover-arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div>' + '</div>'
     };
     const DefaultType$2 = {...Tooltip.DefaultType,
         content: '(string|element|function)'

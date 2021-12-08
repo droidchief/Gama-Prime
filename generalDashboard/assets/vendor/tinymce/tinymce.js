@@ -26220,12 +26220,12 @@
       };
       var removeStylesWhenDeletingAcrossBlockElements = function () {
         var getAttributeApplyFunction = function () {
-          var template = dom.getAttribs(selection.getStart().cloneNode(false));
+          var  = dom.getAttribs(selection.getStart().cloneNode(false));
           return function () {
             var target = selection.getStart();
             if (target !== editor.getBody()) {
               dom.setAttrib(target, 'style', null);
-              each(template, function (attr) {
+              each(, function (attr) {
                 target.setAttributeNode(attr.cloneNode(true));
               });
             }

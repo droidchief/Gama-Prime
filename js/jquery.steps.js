@@ -716,7 +716,7 @@ function loadAsyncContent(wizard, options, state)
 
                 case contentMode.async:
                     var currentStepContent = getStepPanel(wizard, currentIndex)._aria("busy", "true")
-                        .empty().append(renderTemplate(options.loadingTemplate, { text: options.labels.loading }));
+                        .empty().append(render(options.loading, { text: options.labels.loading }));
 
                     $.ajax({ url: currentStep.contentUrl, cache: false }).done(function (data)
                     {
@@ -898,7 +898,7 @@ function refreshSteps(wizard, options, state, index)
 
         wizard.find(".steps a").eq(i)._id(uniqueStepId)
             ._aria("controls", uniqueBodyId).attr("href", "#" + uniqueHeaderId)
-            .html(renderTemplate(options.titleTemplate, { index: i + 1, title: title.html() }));
+            .html(render(options.title, { index: i + 1, title: title.html() }));
         wizard.find(".body").eq(i)._id(uniqueBodyId)
             ._aria("labelledby", uniqueHeaderId);
     }
@@ -993,11 +993,11 @@ function removeStepFromCache(wizard, index)
 function render(wizard, options, state)
 {
     // Create a content wrapper and copy HTML from the intial wizard structure
-    var wrapperTemplate = "<{0} class=\"{1}\">{2}</{0}>",
+    var wrapper = "<{0} class=\"{1}\">{2}</{0}>",
         orientation = getValidEnumValue(stepsOrientation, options.stepsOrientation),
         verticalCssClass = (orientation === stepsOrientation.vertical) ? " vertical" : "",
-        contentWrapper = $(wrapperTemplate.format(options.contentContainerTag, "content " + options.clearFixCssClass, wizard.html())),
-        stepsWrapper = $(wrapperTemplate.format(options.stepsContainerTag, "steps " + options.clearFixCssClass, "<ul role=\"tablist\"></ul>")),
+        contentWrapper = $(wrapper.format(options.contentContainerTag, "content " + options.clearFixCssClass, wizard.html())),
+        stepsWrapper = $(wrapper.format(options.stepsContainerTag, "steps " + options.clearFixCssClass, "<ul role=\"tablist\"></ul>")),
         stepTitles = contentWrapper.children(options.headerTag),
         stepContents = contentWrapper.children(options.bodyTag);
 
@@ -1055,24 +1055,24 @@ function renderPagination(wizard, options, state)
     if (options.enablePagination)
     {
         var pagination = "<{0} class=\"actions {1}\"><ul role=\"menu\" aria-label=\"{2}\">{3}</ul></{0}>",
-            buttonTemplate = "<li><a href=\"#{0}\" role=\"menuitem\">{1}</a></li>",
+            button = "<li><a href=\"#{0}\" role=\"menuitem\">{1}</a></li>",
             buttons = "";
 
         if (!options.forceMoveForward)
         {
-            buttons += buttonTemplate.format("previous", options.labels.previous);
+            buttons += button.format("previous", options.labels.previous);
         }
 
-        buttons += buttonTemplate.format("next", options.labels.next);
+        buttons += button.format("next", options.labels.next);
 
         if (options.enableFinishButton)
         {
-            buttons += buttonTemplate.format("finish", options.labels.finish);
+            buttons += button.format("finish", options.labels.finish);
         }
 
         if (options.enableCancelButton)
         {
-            buttons += buttonTemplate.format("cancel", options.labels.cancel);
+            buttons += button.format("cancel", options.labels.cancel);
         }
 
         wizard.append(pagination.format(options.actionContainerTag, options.clearFixCssClass,
@@ -1084,18 +1084,18 @@ function renderPagination(wizard, options, state)
 }
 
 /**
- * Renders a template and replaces all placeholder.
+ * Renders a  and replaces all placeholder.
  *
  * @static
  * @private
- * @method renderTemplate
- * @param template {String} A template
+ * @method render
+ * @param  {String} A 
  * @param substitutes {Object} A list of substitute
- * @return {String} The rendered template
+ * @return {String} The rendered 
  */
-function renderTemplate(template, substitutes)
+function render(, substitutes)
 {
-    var matches = template.match(/#([a-z]*)#/gi);
+    var matches = .match(/#([a-z]*)#/gi);
 
     for (var i = 0; i < matches.length; i++)
     {
@@ -1107,10 +1107,10 @@ function renderTemplate(template, substitutes)
             throwError("The key '{0}' does not exist in the substitute collection!", key);
         }
 
-        template = template.replace(match, substitutes[key]);
+         = .replace(match, substitutes[key]);
     }
 
-    return template;
+    return ;
 }
 
 /**
@@ -1132,7 +1132,7 @@ function renderTitle(wizard, options, state, header, index)
         uniqueBodyId = uniqueId + _tabpanelSuffix + index,
         uniqueHeaderId = uniqueId + _titleSuffix + index,
         stepCollection = wizard.find(".steps > ul"),
-        title = renderTemplate(options.titleTemplate, {
+        title = render(options.title, {
             index: index + 1,
             title: header.html()
         }),
@@ -1702,24 +1702,24 @@ var defaults = $.fn.steps.defaults = {
      */
 
     /**
-     * The title template which will be used to create a step button.
+     * The title  which will be used to create a step button.
      *
-     * @property titleTemplate
+     * @property title
      * @type String
      * @default "<span class=\"number\">#index#.</span> #title#"
      * @for defaults
      **/
-    titleTemplate: "<span class=\"number\">#index#.</span> #title#",
+    title: "<span class=\"number\">#index#.</span> #title#",
 
     /**
-     * The loading template which will be used to create the loading animation.
+     * The loading  which will be used to create the loading animation.
      *
-     * @property loadingTemplate
+     * @property loading
      * @type String
      * @default "<span class=\"spinner\"></span> #text#"
      * @for defaults
      **/
-    loadingTemplate: "<span class=\"spinner\"></span> #text#",
+    loading: "<span class=\"spinner\"></span> #text#",
 
     /*
      * Behaviour
