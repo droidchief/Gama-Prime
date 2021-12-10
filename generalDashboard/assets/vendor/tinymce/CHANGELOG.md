@@ -101,7 +101,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - A new `lang` format is now available that can be used with `editor.formatter`, or applied with the `Lang` editor command #TINY-6149
 - Added a new `language` icon for the `language` toolbar button #TINY-7670
 - Added a new `table-row-numbering` icon #TINY-7327
-- Added new plugin commands: `mceEmoticons` (Emoticons), `mceWordCount` (Word Count), and `mce` () #TINY-7619
+- Added new plugin commands: `mceEmoticons` (Emoticons), `mceWordCount` (Word Count), and `mceTemplate` (Template) #TINY-7619
 - Added a new `iframe_aria_text` setting to set the iframe title attribute #TINY-1264
 - Added a new DomParser `Node.children()` API to return all the children of a `Node` #TINY-7756
 
@@ -123,7 +123,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Changed the load order so content CSS is loaded before the editor is populated with content #TINY-7249
-- Changed the `emoticons`, `wordcount`, `code`, `codesample`, and `` plugins to open dialogs using commands #TINY-7619
+- Changed the `emoticons`, `wordcount`, `code`, `codesample`, and `template` plugins to open dialogs using commands #TINY-7619
 - The context toolbar will no longer show an arrow when it overlaps the content, such as in table cells #TINY-7665
 - The context toolbar will no longer overlap the statusbar for toolbars using `node` or `selection` positions #TINY-7666
 
@@ -267,7 +267,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed table `width` style was removed when copying #TINY-6664
 - Fixed focus lost while typing in the `charmap` or `emoticons` dialogs when the editor is rendered in a shadow root #TINY-6904
 - Fixed corruption of base64 URLs used in style attributes when parsing HTML #TINY-6828
-- Fixed the order of CSS precedence of `content_style` and `content_css` in the `preview` and `` plugins. `content_style` now has precedence #TINY-6529
+- Fixed the order of CSS precedence of `content_style` and `content_css` in the `preview` and `template` plugins. `content_style` now has precedence #TINY-6529
 - Fixed an issue where the image dialog tried to calculate image dimensions for an empty image URL #TINY-6611
 - Fixed an issue where `scope` attributes on table cells would not change as expected when merging or unmerging cells #TINY-6486
 - Fixed the plugin documentation links in the `help` plugin #DOC-703
@@ -307,7 +307,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added new `images_file_types` setting to determine which image file formats will be automatically processed into `img` tags on paste when using the `paste` plugin #TINY-6306
 - Added support for `images_file_types` setting in the image file uploader to determine which image file extensions are valid for upload #TINY-6224
 - Added new `format_empty_lines` setting to control if empty lines are formatted in a ranged selection #TINY-6483
-- Added  support to the `autocompleter` for customizing the autocompleter items #TINY-6505
+- Added template support to the `autocompleter` for customizing the autocompleter items #TINY-6505
 - Added new user interface `enable`, `disable`, and `isDisabled` methods #TINY-6397
 - Added new `closest` formatter API to get the closest matching selection format from a set of formats #TINY-6479
 - Added new `emojiimages` emoticons database that uses the twemoji CDN by default #TINY-6021
@@ -394,7 +394,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed the `event.getComposedPath()` function throwing an exception for events fired from the editor #TINY-6128
 - Fixed notifications not appearing when the editor is within a ShadowRoot #TINY-6354
 - Fixed focus issues with inline dialogs when the editor is within a ShadowRoot #TINY-6360
-- Fixed the `` plugin previews missing some content styles #TINY-6115
+- Fixed the `template` plugin previews missing some content styles #TINY-6115
 - Fixed the `media` plugin not saving the alternative source url in some situations #TINY-4113
 - Fixed an issue where column resizing using the resize bars was inconsistent between fixed and relative table widths #TINY-6001
 - Fixed an issue where dragging and dropping within a table would select table cells #TINY-5950
@@ -602,7 +602,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed `scrollIntoView` potentially hiding elements behind the toolbar #TINY-4162
 - Fixed editor not respecting the `resize_img_proportional` setting due to legacy code #TINY-4236
 - Fixed flickering floating toolbar drawer in inline mode #TINY-4210
-- Fixed an issue where the  plugin dialog would be indefinitely blocked on a failed  load #TINY-2766
+- Fixed an issue where the template plugin dialog would be indefinitely blocked on a failed template load #TINY-2766
 - Fixed the `mscontrolselect` event not being unbound on IE/Edge #TINY-4196
 - Fixed Confirm dialog footer buttons so only the "Yes" button is highlighted #TINY-4310
 - Fixed `file_picker_callback` functionality for Image, Link and Media plugins #TINY-4163
@@ -1020,7 +1020,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed an issue where menus were generating invalid HTML in some cases #TINY-3323
 - Fixed an issue that could cause the mobile theme to show a blank white screen when the editor was inside an `overflow:hidden` element #TINY-3407
 - Fixed mobile theme using a transparent background and not taking up the full width on iOS #TINY-3414
-- Fixed the  plugin dialog missing the description field #TINY-3337
+- Fixed the template plugin dialog missing the description field #TINY-3337
 - Fixed input dialog components using an invalid default type attribute #TINY-3424
 - Fixed an issue where backspace/delete keys after/before pagebreak elements wouldn't move the caret #TINY-3097
 - Fixed an issue in the table plugin where menu items and toolbar buttons weren't showing correctly based on the selection #TINY-3423
@@ -2040,7 +2040,7 @@ Initial list of features and changes is available at https://tiny.cloud/docs-pre
 - Fixed bug where the skin_url wasn't used by the inlite theme.
 - Fixed so data attributes are ignored when comparing formats in the formatter.
 - Fixed so it's possible to disable inline toolbars in the inlite theme.
-- Fixed so  dialog gets resized if it doesn't fit the window viewport.
+- Fixed so template dialog gets resized if it doesn't fit the window viewport.
 
 ## 4.4.1 - 2016-07-26
 
@@ -2122,7 +2122,7 @@ Initial list of features and changes is available at https://tiny.cloud/docs-pre
 - Added support for focusing the contextual toolbars using keyboard.
 - Added keyboard support for slider UI controls. You can no increase/decrease using arrow keys.
 - Added url pattern matching for Dailymotion to media plugin. Patch contributed by Bertrand Darbon.
-- Added body_class to  plugin preview. Patch contributed by Milen Petrinski.
+- Added body_class to template plugin preview. Patch contributed by Milen Petrinski.
 - Added options to better override textcolor pickers with custom colors. Patch contributed by Xavier Boubert.
 - Added visual arrows to inline contextual toolbars so that they point to the element being active.
 
@@ -2229,7 +2229,7 @@ Npm version bump due to package not being fully updated.
 - Fixed bug where double click selection of a word would remove the space before the word on insert contents.
 - Fixed bug where table plugin would produce exceptions when hovering tables with invalid structure.
 - Fixed bug where fullscreen wouldn't scroll back to it's original position when untoggled.
-- Fixed so the  plugins s setting can be a function that gets a callback that can provide s.
+- Fixed so the template plugins templates setting can be a function that gets a callback that can provide templates.
 
 ## 4.3.2 - 2015-12-14
 
@@ -2315,7 +2315,7 @@ Npm version bump due to package not being fully updated.
 - Fixed bug where selection of contents of a nearly empty editor in Edge would sometimes fail.
 - Fixed bug where color styles woudln't be retained on copy/paste in Blink/Webkit.
 - Fixed bug where the table plugin would throw an error when inserting rows after a child table.
-- Fixed bug where the  plugin wouldn't handle functions as variable replacements.
+- Fixed bug where the template plugin wouldn't handle functions as variable replacements.
 - Fixed bug where undo/redo sometimes wouldn't work properly when applying formatting collapsed ranges.
 - Fixed bug where shift+delete wouldn't do a cut operation on Blink/WebKit.
 - Fixed bug where cut action wouldn't properly store the before selection bookmark for the undo level.
