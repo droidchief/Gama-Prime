@@ -224,6 +224,75 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal modal-right fade" id="portfolio_modal" tabindex="-1" role="dialog" aria-labelledby="right_modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Portfolio</h3>
+                    </div>
+                    <div class="modal-body">
+
+                        <div style="height: 100vh; overflow-y: scroll;">
+
+                            <!-- ======= Cover Photo ======= -->
+                            <img src="" class="img-fluid" alt="">
+                            <img style="height: 10rem; width: 10rem; background-size: cover; border-radius: .3rem; cursor: pointer;" src="assets/img/portfolio/chessBoard.png" alt="" srcset="">
+                            <div class="d-flex justify-content-end" style="margin: -2rem .3rem;">
+                                <div style="margin-top: -.5rem; background-color: #149DDD; border-radius: 100px; padding: 0px 0px 0px 2px;" class="avartar-picker">
+                                    <input type="file" name="file-1[]" id="file-1" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+                                    <label for="file-1">
+                                        <i style="font-size: 15px; color: white; padding: 3px;" class="bi bi-pencil"></i>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ======= Form ======= -->
+                        <div style="margin-top: -33rem;" class="form-row">
+                            <div class="form-holder d-flex">
+                                <p style="font-size: 14px; margin-top: 12px;">Project Name:</p>
+                                <input style="border: none; width: 13rem; height: 1.3rem; margin-top: 13px;" type="text" placeholder="Steam Chess" class="form-control">
+                            </div>
+                            <div class="form-holder d-flex">
+                                <p style="font-size: 14px; margin-top: 12px;">Category:</p>
+                                <input style="border: none; width: 13rem; height: 1.3rem; margin-top: 13px;" type="text" placeholder="AI" class="form-control">
+                            </div>
+
+                            <div class="form-holder d-flex">
+                                <p style="font-size: 14px; margin-top: 12px;">Client:</p>
+                                <input style="border: none; width: 13rem; height: 1.3rem; margin-top: 13px;" type="text" placeholder="Gamma Prime" class="form-control">
+                            </div>
+
+                            <div class="form-holder d-flex">
+                                <p style="font-size: 14px; margin-top: 12px;">Link:</p>
+                                <input style="border: none; width: 13rem; height: 1.3rem; margin-top: 13px;" type="text" placeholder="https://github.com/drak00/steam-chess" class="form-control">
+                            </div>
+
+                            <div class="form-holder d-flex">
+                                <div class="form-row">
+                                    <div class="form-holder w-100">
+                                        <textarea name="" cols="50" id="" placeholder="STEAM CHESS ENGINE (named after Steamledge), is a Chess engine focused on Artificial Intelligence written in Python (using python 3.7.7 and pygame 1.9.6)." class="form-control" style="height: 99px;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="modal-footer modal-footer-fixed">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
     <!-- ======= End Edit Modals ======= -->
@@ -441,7 +510,7 @@
                         <div class="portfolio-wrap">
                             <img src="assets/img/portfolio/chessBoard.png" class="img-fluid" alt="">
                             <div class="portfolio-links">
-                                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                <a data-toggle="modal" data-target="#portfolio_modal" href="#" title="Edit Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
