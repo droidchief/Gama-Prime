@@ -292,6 +292,74 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal modal-right fade" id="add_portfolio_modal" tabindex="-1" role="dialog" aria-labelledby="right_modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Portfolio</h3>
+                    </div>
+                    <div class="modal-body">
+
+                        <div style="height: 100vh; overflow-y: scroll;">
+
+                            <!-- ======= Cover Photo ======= -->
+                            <img src="" class="img-fluid" alt="">
+                            <img style="height: 10rem; width: 10rem; background-size: cover; border-radius: .3rem; cursor: pointer;" src="landingPageAssets/img/Rectangle.png" alt="" srcset="">
+                            <div class="d-flex justify-content-end" style="margin: -2rem .3rem;">
+                                <div style="margin-top: -.5rem; background-color: #149DDD; border-radius: 100px; padding: 0px 0px 0px 2px;" class="avartar-picker">
+                                    <input type="file" name="file-1[]" id="file-1" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+                                    <label for="file-1">
+                                        <i style="font-size: 15px; color: white; padding: 3px;" class="bi bi-plus"></i>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ======= Form ======= -->
+                        <div style="margin-top: -33rem;" class="form-row">
+                            <div class="form-holder d-flex">
+                                <p style="font-size: 14px; margin-top: 12px;">Project Name:</p>
+                                <input style="border: none; width: 13rem; height: 1.3rem; margin-top: 13px;" type="text" placeholder="Project Name" class="form-control">
+                            </div>
+                            <div class="form-holder d-flex">
+                                <p style="font-size: 14px; margin-top: 12px;">Category:</p>
+                                <input style="border: none; width: 13rem; height: 1.3rem; margin-top: 13px;" type="text" placeholder="Category" class="form-control">
+                            </div>
+
+                            <div class="form-holder d-flex">
+                                <p style="font-size: 14px; margin-top: 12px;">Client:</p>
+                                <input style="border: none; width: 13rem; height: 1.3rem; margin-top: 13px;" type="text" placeholder="Client" class="form-control">
+                            </div>
+
+                            <div class="form-holder d-flex">
+                                <p style="font-size: 14px; margin-top: 12px;">Link:</p>
+                                <input style="border: none; width: 13rem; height: 1.3rem; margin-top: 13px;" type="text" placeholder="www.example.com" class="form-control">
+                            </div>
+
+                            <div class="form-holder d-flex">
+                                <div class="form-row">
+                                    <div class="form-holder w-100">
+                                        <textarea name="" cols="50" id="" placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, optio?" class="form-control" style="height: 99px;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="modal-footer modal-footer-fixed">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
 
@@ -483,9 +551,13 @@
         <section id="portfolio" class="portfolio section-bg">
             <div class="container">
 
-                <div class="section-title">
+                <div class="section-title d-flex justify-content-between">
                     <div>
                         <h2>Portfolio</h2>
+                    </div>
+
+                    <div>
+                        <p data-toggle="modal" data-target="#add_portfolio_modal" style="margin-left: .5rem; background-color: #173b6c; border-radius: .5rem .2rem; padding: .3rem; color: white; padding: .3rem 1rem; cursor: pointer;">Add Project</p>
                     </div>
                 </div>
 
@@ -494,7 +566,7 @@
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
                             <li data-filter=".filter-challenge">During Challenge</li>
-                            <li data-filter=".filter-professional">Innovation Engineer</li>
+                            <li data-filter=".filter-professional">Python Developer</li>
                             <!-- <li data-filter=".filter-verified">Verified</li> -->
                         </ul>
                     </div>
