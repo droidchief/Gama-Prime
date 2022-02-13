@@ -34,6 +34,16 @@ hr {
     color: #999;
 }
 
+.logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    font-family: "Poppins", sans-serif;
+}
+
 .tm-header {
     background-color: #0b001d;
     color: white;
@@ -74,8 +84,8 @@ hr {
 }
 
 .tm-main {
-    margin-left: 400px;
-    padding: 80px 100px 25px;
+    padding-left: 85px;
+    padding-top: 25px;
 }
 
 .tm-post {
@@ -591,10 +601,10 @@ a:hover figcaption {
 
 @media (max-width: 1540px) {
     .tm-header {
-        width: 320px;
+        width: 120px;
     }
     .tm-main {
-        margin-left: 320px;
+        margin-left: 120px;
         width: calc(100% - 320px);
     }
 }
