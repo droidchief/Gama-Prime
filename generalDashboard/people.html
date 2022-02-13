@@ -154,35 +154,180 @@
         </div>
         <!-- End Page Title -->
 
+        <div class="modal fade" id="manageModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Manage User</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <textarea style="width: 100%;" name="" id="" rows="5">Reason(s) for this action</textarea>
+                        </div>
+                        <br> You are about to <b>Deactivate</b> this user. Are you sure.
+                    </div>
+                    <div class="modal-footer">
+                        <button data-bs-toggle="modal" data-bs-target="#messageModal" type="button" class="btn btn-danger">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="deleteModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Manage User</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <textarea style="width: 100%;" name="" id="" rows="5">Reason(s) for this action</textarea>
+                        </div>
+                        <br> You are about to <b>Delete</b> this user. This action is irrevokeable. Please confirm again.
+                    </div>
+                    <div class="modal-footer">
+                        <button data-bs-toggle="modal" data-bs-target="#messageModal" type="button" class="btn btn-danger">Yes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="messageModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Message</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        User k*8a-9w_d#d@c has been deleted by You.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <section class="section faq">
             <div style="margin-top: 2rem;" class="row">
                 <div class="col-lg-12">
 
-                    <div class="card basic">
-                        <div style="height: 75vh; overflow-y: scroll;" class="card-body">
+                    <div style="height: 75vh; overflow-y: scroll;" class="card-body">
 
-                            <div class="d-flex justify-content-between">
-                                <div class="pt-3 d-flex align-items-center">
-                                    <img style="width: 50px; height: 50px; border-radius: 100px; margin-right: .5rem;" src="../images/Picture 2.png" alt="" srcset="">
-                                    <p style="color: white;" class="mt-3">Muhammad Salisu <span><strong>-</strong></span> <i style="color: rgb(169, 169, 169);">Python Developer</i></p>
-                                </div>
+                        <section class="section">
+                            <div class="row">
+                                <div class="col-lg-12">
 
-                                <div class="pt-3 d-flex align-items-center">
-                                    <b style="font-size: 12px; color: #fff; margin-right: 1rem;">1 yr <span><i class="bi bi-dot"></i></span></b>
-                                    <a style="font-size: 1.3rem;" href="../userDashboard.html">
-                                        <i class="bi bi-link"></i>
-                                    </a>
+                                    <div class="card">
+                                        <div class="card-body pt-4">
+                                            <!-- Table with stripped rows -->
+                                            <table class="table datatable">
+                                                <thead>
+                                                    <tr style="color: white;">
+                                                        <th scope="col">Id</th>
+                                                        <th scope="col">Name</th>
+                                                        <th scope="col">Joined</th>
+                                                        <th scope="col">Designation</th>
+                                                        <th scope="col">Manage</th>
+                                                        <th scope="col">Delete</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr style="color: white;">
+                                                        <th scope="row">k*8a-9w_d#d@c</th>
+                                                        <td>Muhammad Salisu</td>
+                                                        <td>4th-July-2021</td>
+                                                        <td>Python Developer</td>
+                                                        <td data-bs-toggle="modal" data-bs-target="#manageModal" style="cursor: pointer;" class="text-warning">Deactivate</td>
+                                                        <td data-bs-toggle="modal" data-bs-target="#deleteModal" style="cursor: pointer;" class="text-danger"><i class="bi bi-trash"></i></td>
+                                                    </tr>
+                                                    <tr style="color: white;">
+                                                        <th scope="row">ka-9*8#d@cw_d</th>
+                                                        <td>Victor Loveday</td>
+                                                        <td>4th-July-2021</td>
+                                                        <td>Jack of all Trades</td>
+                                                        <td data-bs-toggle="modal" data-bs-target="#manageModal" style="cursor: pointer;" class="text-success">Activate</td>
+                                                        <td data-bs-toggle="modal" data-bs-target="#deleteModal" style="cursor: pointer;" class="text-danger"><i class="bi bi-trash"></i></td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- End Table with stripped rows -->
+
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                            <hr class="dropdown-divider">
+                        </section>
+
+                        <div class="pagetitle mt-3">
+                            <h1>Status</h1>
+                        </div>
+                        <!-- End Page Title -->
+
+                        <div style="margin-top: 2rem;" class="row">
+                            <div class="col-lg-12">
+
+                                <div style="height: 75vh; overflow-y: scroll;" class="card-body">
+
+                                    <section class="section">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+
+                                                <div class="card">
+                                                    <div class="card-body pt-4">
+                                                        <!-- Table with stripped rows -->
+                                                        <table class="table datatable">
+                                                            <thead>
+                                                                <tr style="color: white;">
+                                                                    <th scope="col">Id</th>
+                                                                    <th scope="col">Name</th>
+                                                                    <th scope="col">Status</th>
+                                                                    <th scope="col">Reason</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr style="color: white;">
+                                                                    <th scope="row">k*8a-9w_d#d@c</th>
+                                                                    <td>Muhammad Salisu</td>
+                                                                    <td class="text-warning">Deacticated</td>
+                                                                    <td>Violoted Rule 9 of section 3</td>
+                                                                </tr>
+                                                                <tr style="color: white;">
+                                                                    <th scope="row">k*8a-9w_d#d@c</th>
+                                                                    <td>Salisu Muhammad </td>
+                                                                    <td class="text-danger">Deleted</td>
+                                                                    <td>Violoted Rule 12 of section 3</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <!-- End Table with stripped rows -->
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
-
                 </div>
 
             </div>
+
+
         </section>
+
+
 
     </main>
     <!-- End #main -->
