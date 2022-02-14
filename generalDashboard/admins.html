@@ -175,8 +175,13 @@
 
     <main id="main" class="main">
 
-        <div class="pagetitle">
+        <div class="pagetitle d-flex justify-content-between">
             <h1>Admins</h1>
+
+            <div>
+                <button data-bs-toggle="modal" data-bs-target="#createAdminModal" class="btn btn-primary">Create Admin</button>
+                <button style="margin-left: 1rem;" data-bs-toggle="modal" data-bs-target="#assignTasknModal" class="btn btn-primary">Assign Task</button>
+            </div>
         </div>
         <!-- End Page Title -->
 
@@ -781,10 +786,6 @@
                                 </div>
                             </div>
 
-                        </div>
-
-                        <div>
-                            <button data-bs-toggle="modal" data-bs-target="#createAdminModal" class="btn btn-primary">Create Admin</button>
                         </div>
                     </div>
                 </div>
