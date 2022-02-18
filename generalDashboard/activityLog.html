@@ -181,9 +181,32 @@
 
     <main id="main" class="main">
 
-        <div class="pagetitle">
+        <div class="pagetitle d-flex justify-content-between">
             <h1>Activity Log</h1>
+
+            <div class="text-white d-flex justify-content-between">
+                <p class="m-2">Filter:</p>
+
+                <div class="form-check m-2">
+                    <input class="form-check-input" type="checkbox" id="changesMade" checked>
+                    <label class="form-check-label" for="changesMade">
+                        Admins
+                    </label>
+                </div>
+
+                <div class="form-check m-2">
+                    <input class="form-check-input" type="checkbox" id="changesMade" checked>
+                    <label class="form-check-label" for="changesMade">
+                        People
+                    </label>
+                </div>
+
+                <div class="form-check m-2">
+                    <input style="width: 10rem;" type="date" class="form-control">
+                </div>
+            </div>
         </div>
+
         <!-- End Page Title -->
 
         <div class="modal fade" id="manageModal" tabindex="-1">
@@ -261,22 +284,25 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingOne">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        User <span class="text-success m-2">ka-9*8#d@cw_d</span> deactivated
-                                      </button>
+                                                        User <span class="text-success m-2">ka-9*8#d@cw_d</span>
+                                                        deactivated
+                                                    </button>
                                             </h2>
                                             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                                 <div class="accordion-body">
                                                     <div class="d-flex justify-content-between">
                                                         <p>Author: <span class="text-success">Admin32829</span> </p>
                                                         <div class="d-flex justify-content-between">
-                                                            <p>Date: <span class="text-success">4th-July-2021</span> </p>
+                                                            <p>Date: <span class="text-success">4th-July-2021</span>
+                                                            </p>
                                                             <p style="margin-left: 1rem;">Time: <span class="text-success">10:24 pm</span> </p>
                                                         </div>
                                                     </div>
 
                                                     <div>
                                                         <p><span class="text-danger">Reason:</span> Violoted Rule 9 of section 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quasi beatae nihil harum doloremque vel optio deserunt quod
-                                                            natus tempora impedit, voluptatem, modi, numquam blanditiis.</p>
+                                                            natus tempora impedit, voluptatem, modi, numquam blanditiis.
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -284,15 +310,17 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingTwo">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                                    User <span class="text-success m-2">ka-9*8#d@cw_d</span> registered
-                                                </button>
+                                                        User <span class="text-success m-2">ka-9*8#d@cw_d</span>
+                                                        registered
+                                                    </button>
                                             </h2>
                                             <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                                                 <div class="accordion-body">
                                                     <div class="d-flex justify-content-between">
                                                         <p>Author: <span class="text-success">Admin32829</span> </p>
                                                         <div class="d-flex justify-content-between">
-                                                            <p>Date: <span class="text-success">4th-July-2021</span> </p>
+                                                            <p>Date: <span class="text-success">4th-July-2021</span>
+                                                            </p>
                                                             <p style="margin-left: 1rem;">Time: <span class="text-success">10:24 pm</span> </p>
                                                         </div>
                                                     </div>
@@ -302,15 +330,17 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingThree">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                                    Portfolio of user <span class="text-success m-2">ka-9*8#d@cw_d</span> verified
-                                                </button>
+                                                        Portfolio of user <span
+                                                            class="text-success m-2">ka-9*8#d@cw_d</span> verified
+                                                    </button>
                                             </h2>
                                             <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                                                 <div class="accordion-body">
                                                     <div class="d-flex justify-content-between">
                                                         <p>Author: <span class="text-success">Admin32829</span> </p>
                                                         <div class="d-flex justify-content-between">
-                                                            <p>Date: <span class="text-success">4th-July-2021</span> </p>
+                                                            <p>Date: <span class="text-success">4th-July-2021</span>
+                                                            </p>
                                                             <p style="margin-left: 1rem;">Time: <span class="text-success">10:24 pm</span> </p>
                                                         </div>
                                                     </div>
@@ -345,7 +375,8 @@
     </footer>
     <!-- End Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
