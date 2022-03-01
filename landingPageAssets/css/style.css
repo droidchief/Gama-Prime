@@ -789,6 +789,10 @@ section {
     filter: opacity(.3);
 }
 
+.featured-services {
+    height: 25rem;
+}
+
 .featured-services .icon-box {
     padding: 30px;
     position: relative;
