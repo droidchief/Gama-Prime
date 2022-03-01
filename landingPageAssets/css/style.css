@@ -492,7 +492,7 @@ h6 {
 
 #hero .container {
     position: absolute;
-    padding: 5rem;
+    /* padding: 5rem; */
 }
 
 #hero h1 {
