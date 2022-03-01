@@ -568,7 +568,6 @@ h6 {
 @media (max-width: 768px) {
     #hero {
         height: 100vh;
-        background: url("../../landingPageAssets/img/Gamma\ bg-02-02.png") top left;
     }
     #hero h1 {
         font-size: 28px;
