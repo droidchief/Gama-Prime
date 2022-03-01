@@ -100,8 +100,6 @@ Main components
         margin-left: -15px;
         margin-top: 15px;
         /* Force Hardware Acceleration in WebKit */
-        -webkit-transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
     }
 }
 
