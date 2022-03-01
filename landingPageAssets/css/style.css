@@ -582,6 +582,12 @@ h6 {
     #hero .btn-watch-video {
         font-size: 13px;
     }
+    .Timeline {
+        display: none !important;
+    }
+    .cd-container {
+        display: block !important;
+    }
 }
 
 @media (max-height: 500px) {
@@ -789,8 +795,8 @@ section {
     filter: opacity(.3);
 }
 
-.featured-services {
-    height: 25rem;
+.cd-container {
+    display: none;
 }
 
 .featured-services .icon-box {
